@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source /opt/ros/indigo/setup.bash
+
 
 
 ##### Stuff #####
@@ -120,12 +120,11 @@ source /opt/ros/indigo/setup.bash
 ## You can use whatever you want as an alias, like for Mondays:
 # eval "$(thefuck --alias FUCK)"
 
-
-
-##### ROS Husky Connection#####
-
-export ROS_MASTER_URI=http://192.168.1.11:11311
-export ROS_IP=192.168.1.102
+##### ROS Stuff #####
+# source /opt/ros/indigo/setup.bash
+##### ROS Husky Connection #####
+# export ROS_MASTER_URI=http://192.168.1.11:11311
+# export ROS_IP=192.168.1.102
 
 ##### Aliases #####
 
@@ -142,8 +141,10 @@ alias bashrc="sudo gedit ~/.bashrc"
 alias src="source ~/.bashrc"
 
 alias c="clear"
-alias ComVision="cd ~/ComVision"
 
+alias ComVision="cd ~/ComVision"
+alias gitRobXCom="cd ~/Github/ComVision"
+alias gitRobX="cd ~/Github/ComVision"
 
 
 
