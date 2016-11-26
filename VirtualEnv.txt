@@ -1,0 +1,73 @@
+Utilizing Python2.7.6
+(more info at https://realpython.com/blog/python/python-virtual-environments-a-primer/
+	http://www.pyimagesearch.com/2015/08/17/the-perfect-computer-vision-environment-pycharm-opencv-and-python-virtual-environments/)
+
+
+Terminal Commands:
+		# install pip first (can skip is have pip)
+	sudo apt-get install python-pip
+	sudo pip install --upgrade pip 	(sudo pip install -U pip)
+	sudo pip install virtualenv
+		# Optional Test (can remove after)
+	mkdir python-virtual-environments && cd python-virtual-environments
+	virtualenv env
+	source env/bin/activate
+	deactivate
+		# Good stuff
+	sudo pip install virtualenvwrapper
+	which virtualenvwrapper.sh
+
+Edit ~/.bashrc:
+	export WORKON_HOME=$HOME/.virtualenvs   # optional
+	export PROJECT_HOME=$HOME/projects      # optional
+	source /usr/local/bin/virtualenvwrapper.sh
+
+Terminal Commands: 
+	source ~/.bashrc
+	echo $WORKON_HOME
+
+
+Now anytime you want to start a new project, all you have to do is:
+	$ mkvirtualenv my-new-project
+	(my-new-project) $
+To show the list of virtual environments, terminal command:
+	$ workon 
+To activate, terminal command:
+	$ workon environmentName
+To deactivate, terminal command:
+	$ deactivate
+
+
+
+Setup packages and OpenCV:
+Terminal Commands (sudo may be required):
+		# may have to create Temp virtualenv and use: pip wheel numpy scipy	
+		# may have to upgrade pip: sudo pip install -U pip
+	pip install numpy
+		# if having issues use: pip wheel scipy
+	pip install scipy
+	pip install matplotlib
+	pip install scikit-learn
+	pip install -U scikit-learn
+	sudo apt-get install python-opencv
+	
+If OpenCV is installed in /usr/local/lib/python2.7/site-packages/ ... use Terminal Commands:
+	cd ~/.virtualenvs/pyimagesearch/lib/python2.7/site-packages/
+		# works!
+	ln -s /usr/local/lib/python2.7/dist-packages/cv2.so cv2.so
+		# Suggested, but doesn't work
+	ln -s /usr/local/lib/python2.7/site-packages/cv.py cv.py
+	ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+
+
+
+Setup for Python3:
+	sudo apt-get update
+	sudo apt-get install python3
+	sudo apt-get upgrade
+	mkvirtualenv -p python3 envname
+		# check to make sure everything is okay
+
+
+
+
