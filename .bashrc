@@ -128,6 +128,9 @@ fi
 
 ##### Aliases #####
 
+alias ll="ls -l"
+alias la="ls -a"
+
 alias ..="cd .."
 alias .2="cd ../../"
 alias .3="cd ../../../"
